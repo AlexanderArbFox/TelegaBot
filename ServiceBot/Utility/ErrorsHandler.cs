@@ -49,7 +49,7 @@ namespace ServiceBot.Utility
             {
                 using (var connection = new SqlConnection(_applicationSettings.ConnectionString))
                 {
-                    using(var cmd = new SqlCommand("InfoErrorToAdmin", connection))
+                    using(var cmd = new SqlCommand("MailMessageAboutError", connection))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@errorMessage", SqlDbType.NVarChar).Value = message;
